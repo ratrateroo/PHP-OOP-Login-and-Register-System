@@ -3,9 +3,9 @@
    
     // $user = DB::getInstance()->query("SELECT username FROM users WHERE username = ?", array('alex'));
     // $user = DB::getInstance()->get('users', array('username', '=', 'alex'));
-    $user = DB::getInstance()->query("SELECT * FROM users");
+    //$user = DB::getInstance()->query("SELECT * FROM users");
 
-    if($user->error()) {
+/*     if($user->error()) {
         echo 'No user';
     } else {
         echo 'OK!';
@@ -19,5 +19,15 @@
         // }
 
         echo $user->first()->username;
-    }
-?>
+    } */
+
+    $userInsert = DB::getInstance()->insert('users', array(
+        'username' => 'Dale',
+        'password' => 'password',
+        'salt' => 'salt'
+    ));
+
+    // $userUpdate = DB::getInstance()->update('users', 1, array(
+    //     'password' => 'newpassword'
+    // ));
+?> 
