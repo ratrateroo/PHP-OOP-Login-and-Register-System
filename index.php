@@ -32,9 +32,14 @@
     // ));
 
 
-    if(Session::exists('success')) {
-        echo Session::flash('success');
+    // if(Session::exists('success')) {
+    //     echo Session::flash('success');
+    // }
+
+    if(Session::exists('home')) {
+        echo '<p>' . Session::flash('home') . '</p>';
     }
+    echo Session::get(Config::get('session/session_name'));
 
 
 
