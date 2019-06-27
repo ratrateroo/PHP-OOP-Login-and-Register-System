@@ -21,13 +21,21 @@
         echo $user->first()->username;
     } */
 
-    $userInsert = DB::getInstance()->insert('users', array(
-        'username' => 'Dale',
-        'password' => 'password',
-        'salt' => 'salt'
-    ));
+    // $userInsert = DB::getInstance()->insert('users', array(
+    //     'username' => 'Dale',
+    //     'password' => 'password',
+    //     'salt' => 'salt'
+    // ));
 
     // $userUpdate = DB::getInstance()->update('users', 1, array(
     //     'password' => 'newpassword'
     // ));
+
+
+    if(Session::exists('success')) {
+        echo Session::flash('success');
+    }
+
+
+
 ?> 
